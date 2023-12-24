@@ -36,6 +36,7 @@
   "type": "module",
   "dependencies": {
     "@marp-team/marp-core": "^3.9.0",
+    "@unocss/preset-uno": "^0.58.0",
     "unocss": "^0.58.0"
   }
 }
