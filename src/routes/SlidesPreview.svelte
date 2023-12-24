@@ -12,9 +12,7 @@
 	const marpit = new Marpit();
 
 	onMount(() => {
-		const { html, css } = marpit.render('');
-		htmlString = html;
-		cssString = `<style>${css}</style>`;
+		renderSlides();
 	});
 
 	const renderSlides = () => {
