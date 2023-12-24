@@ -38,10 +38,14 @@
   },
   "type": "module",
   "dependencies": {
+    "@codemirror/lang-markdown": "^6.2.3",
     "@marp-team/marp-core": "^3.9.0",
+    "@marp-team/marpit": "^2.6.1",
     "@unocss/preset-uno": "^0.58.0",
     "@unocss/reset": "^0.58.0",
     "@unocss/svelte-scoped": "^0.58.0",
+    "sass": "^1.69.5",
+    "svelte-codemirror-editor": "^1.2.0",
     "unocss": "^0.58.0"
   },
   "lint-staged": {
