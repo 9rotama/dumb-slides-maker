@@ -1,7 +1,7 @@
 <script lang="ts">
-	import CodeEditor from './CodeEditor.svelte';
-	import SlidesPreview from './SlidesPreview.svelte';
-	import SlidesThemeOptionSelector from './SlidesThemeOptionSelector.svelte';
+	import CodeEditor from '../components/CodeEditor.svelte';
+	import SlidesPreview from '../components/SlidesPreview.svelte';
+	import SlidesThemeOptionSelector from '../components/SlidesThemeOptionSelector.svelte';
 </script>
 
 <div class="h-full grid grid-cols-2 gap-10">
