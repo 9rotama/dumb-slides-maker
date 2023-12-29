@@ -1,5 +1,16 @@
 import type { SlidesThemeOptions } from '../types/SlidesThemeOptions';
 
+const fontFamilyName = (value: string) => {
+	switch (value) {
+		case 'default':
+			return 'sans-serif';
+		case 'pop':
+			return '"Mochiy Pop One"';
+		case 'yusei-magic':
+			return '"Yusei Magic"';
+	}
+};
+
 export const createMarpTheme = (option: SlidesThemeOptions) => {
 	return `
 
@@ -12,6 +23,7 @@ section {
   margin-bottom: 20px;
   filter: drop-shadow(0px 10px 10px #00002270);
   box-sizing: border-box;
+  font-family: ${fontFamilyName(option.fontFamily)}, sans-serif;
 }
 
   `;

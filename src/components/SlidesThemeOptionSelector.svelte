@@ -10,13 +10,25 @@
 		{ name: 'light blue', value: '#eef' }
 	];
 
+	const fontFamilyOptions = [
+		{ name: 'デフォルト', value: 'default' },
+		{ name: '油性マジック', value: 'yusei-magic' },
+		{ name: 'ポップ体', value: 'pop' }
+	];
+
 	let selectedBackgroundColor: SelectOption = backgroundColorOptions[0];
+	let selectedFontFamily: SelectOption = fontFamilyOptions[0];
 
 	const setTheme = () => {
-		const newOption: SlidesThemeOptions = { backgroundColor: selectedBackgroundColor.value };
+		const newOption: SlidesThemeOptions = {
+			backgroundColor: selectedBackgroundColor.value,
+			fontFamily: selectedFontFamily.value
+		};
 		slidesThemeOptionsStore.set(newOption);
 	};
 </script>
 
 <Select options={backgroundColorOptions} bind:selectedOption={selectedBackgroundColor} />
+<Select options={fontFamilyOptions} bind:selectedOption={selectedFontFamily} />
+
 <Button onClick={setTheme}>Apply</Button>
