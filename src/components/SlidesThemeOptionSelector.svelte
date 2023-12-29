@@ -15,7 +15,6 @@
 	const setTheme = () => {
 		const newOption: SlidesThemeOptions = { backgroundColor: selectedBackgroundColor.value };
 		slidesThemeOptionsStore.set(newOption);
-		console.log(newOption);
 	};
 </script>
 

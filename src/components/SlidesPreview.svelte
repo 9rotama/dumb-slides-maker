@@ -9,9 +9,12 @@
 	$: htmlString = '';
 	$: cssString = '';
 
+	let innerWidth: number;
+
 	const marpit = new Marpit();
 
 	onMount(() => {
+		marpit.themeSet.default = marpit.themeSet.add(createMarpTheme($slidesThemeOptionsStore));
 		renderSlides();
 	});
 
@@ -19,6 +22,11 @@
 		const { html, css } = marpit.render(markdownText);
 		htmlString = html;
 		cssString = `<style>${css}</style>`;
+	};
+
+	const updateSlidesSizeInWindow = () => {
+		marpit.themeSet.default = marpit.themeSet.add(createMarpTheme($slidesThemeOptionsStore));
+		renderSlides();
 	};
 
 	const unsubscribeText = markdownTextStore.subscribe((text) => {
@@ -37,5 +45,12 @@
 	});
 </script>
 
-<div class="marpit-wrapper">{@html htmlString}</div>
+<svelte:window bind:innerWidth on:resize={updateSlidesSizeInWindow} />
+
+<div
+	class="marpit-wrapper"
+	style="transform-origin: left top; transform: scale({((innerWidth - 50) * 0.5) / 1280})"
+>
+	{@html htmlString}
+</div>
 {@html cssString}
