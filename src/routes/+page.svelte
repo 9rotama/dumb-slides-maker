@@ -6,6 +6,6 @@
 
 <SlidesThemeOptionSelector />
 <div class="h-full grid grid-cols-2">
-	<div><CodeEditor /></div>
-	<div class="bg-gray-900"><SlidesPreview /></div>
+	<div class="h-[90vh] overflow-y-scroll"><CodeEditor /></div>
+	<div class="h-[90vh] overflow-y-scroll bg-gray-900"><SlidesPreview /></div>
 </div>
