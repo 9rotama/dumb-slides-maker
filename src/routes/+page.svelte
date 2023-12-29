@@ -4,7 +4,8 @@
 	import SlidesThemeOptionSelector from '../components/SlidesThemeOptionSelector.svelte';
 </script>
 
-<div class="h-full grid grid-cols-2 gap-10">
-	<div><SlidesThemeOptionSelector /><CodeEditor /></div>
-	<div class="p-5 bg-slate-500"><SlidesPreview /></div>
+<SlidesThemeOptionSelector />
+<div class="h-full grid grid-cols-2">
+	<div><CodeEditor /></div>
+	<div class="bg-gray-900"><SlidesPreview /></div>
 </div>

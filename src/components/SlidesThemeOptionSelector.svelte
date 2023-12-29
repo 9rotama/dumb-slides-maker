@@ -1,20 +1,23 @@
 <script lang="ts">
 	import { slidesThemeOptionsStore } from '../stores/slidesThemeOptionsStore';
+	import type { SelectOption } from '../types/SelectOption';
 	import { type SlidesThemeOptions } from '../types/SlidesThemeOptions';
+	import Button from './Button.svelte';
+	import Select from './Select.svelte';
 
-	let backgroundColor = '#fff';
+	const backgroundColorOptions = [
+		{ name: 'white', value: '#fff' },
+		{ name: 'light blue', value: '#eef' }
+	];
+
+	let selectedBackgroundColor: SelectOption = backgroundColorOptions[0];
 
 	const setTheme = () => {
-		const newOption: SlidesThemeOptions = { backgroundColor };
+		const newOption: SlidesThemeOptions = { backgroundColor: selectedBackgroundColor.value };
 		slidesThemeOptionsStore.set(newOption);
 		console.log(newOption);
 	};
 </script>
 
-<div class="flex flex-row justify-center">
-	<p class="text-sm">Background Color</p>
-	<select bind:value={backgroundColor} on:change={setTheme}>
-		<option value="#fff">White</option>
-		<option value="#dde">Light Gray</option>
-	</select>
-</div>
+<Select options={backgroundColorOptions} bind:selectedOption={selectedBackgroundColor} />
+<Button onClick={setTheme}>Apply</Button>

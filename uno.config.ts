@@ -1,6 +1,14 @@
+import presetIcons from '@unocss/preset-icons';
 import presetUno from '@unocss/preset-uno';
 import { defineConfig } from 'unocss';
 
 export default defineConfig({
-	presets: [presetUno()]
+	presets: [
+		presetUno(),
+		presetIcons({
+			collections: {
+				ri: () => import('@iconify-json/ri/icons.json').then((i) => i.default)
+			}
+		})
+	]
 });
