@@ -3,6 +3,8 @@
 	import { oneDark } from '@codemirror/theme-one-dark';
 	import CodeMirror from 'svelte-codemirror-editor';
 	import { markdownTextStore } from '../stores/markdownTextStore';
+
+
 </script>
 
 <div class="h-full">

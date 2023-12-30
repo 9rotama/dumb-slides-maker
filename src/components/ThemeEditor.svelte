@@ -15,6 +15,7 @@
 			fontFamily: selectedFontFamily
 		};
 		slidesThemeOptionsStore.set(newOption);
+		localStorage.setItem('slidesThemeOptions', JSON.stringify(newOption));
 	};
 </script>
 
