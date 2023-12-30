@@ -19,11 +19,11 @@ export const createMarpTheme = (option: SlidesThemeOptions) => {
 ${marpDefaultTheme}
 
 section {
-  background-color: ${option.backgroundColor};
+  background-color: ${option.backgroundColor.value};
   margin-bottom: 20px;
   filter: drop-shadow(0px 10px 10px #00002270);
   box-sizing: border-box;
-  font-family: ${fontFamilyName(option.fontFamily)}, sans-serif;
+  font-family: ${fontFamilyName(option.fontFamily.value)}, sans-serif;
 }
 
   `;

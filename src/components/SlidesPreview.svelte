@@ -5,7 +5,6 @@
 	import { slidesThemeOptionsStore } from '../stores/slidesThemeOptionsStore';
 	import { createMarpTheme } from '../utils/createMarpTheme';
 
-	$: markdownText = '';
 	$: htmlString = '';
 	$: cssString = '';
 
@@ -19,7 +18,7 @@
 	});
 
 	const renderSlides = () => {
-		const { html, css } = marpit.render(markdownText);
+		const { html, css } = marpit.render($markdownTextStore);
 		htmlString = html;
 		cssString = `<style>${css}</style>`;
 	};
@@ -29,8 +28,7 @@
 		renderSlides();
 	};
 
-	const unsubscribeText = markdownTextStore.subscribe((text) => {
-		markdownText = text;
+	const unsubscribeText = markdownTextStore.subscribe(() => {
 		renderSlides();
 	});
 

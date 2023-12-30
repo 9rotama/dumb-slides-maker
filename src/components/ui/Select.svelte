@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { SelectOption } from '../types/SelectOption';
+	import type { SelectOption } from '../../types/SelectOption';
 
 	export let options: SelectOption[];
 	export let selectedOption: SelectOption;

@@ -1,4 +1,6 @@
+import type { SelectOption } from './SelectOption';
+
 export type SlidesThemeOptions = {
-	backgroundColor: string;
-	fontFamily: string;
+	backgroundColor: SelectOption;
+	fontFamily: SelectOption;
 };
