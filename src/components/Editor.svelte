@@ -7,18 +7,29 @@
 	let selectedTabIndex = 0;
 </script>
 
-<div class="flex flex-col w-full h-full">
-	<TabSelect
-		tabs={[{ name: 'Markdown編集' }, { name: 'テーマ設定' }, { name: 'エクスポート' }]}
-		bind:selectedTabIndex
-	/>
-	{#if selectedTabIndex === 0}
-		<CodeEditor />
-	{/if}
-	{#if selectedTabIndex === 1}
-		<ThemeEditor />
-	{/if}
-	{#if selectedTabIndex === 2}
-		<ExportTab />
-	{/if}
+<div class="relative w-full h-full flex flex-col">
+	<div class="relative h-[2.5rem] ml-auto mr-auto">
+		<TabSelect
+			tabs={[{ name: 'Markdown編集' }, { name: 'テーマ設定' }, { name: 'エクスポート' }]}
+			bind:selectedTabIndex
+		/>
+	</div>
+
+	<div class="tab-content">
+		{#if selectedTabIndex === 0}
+			<CodeEditor />
+		{/if}
+		{#if selectedTabIndex === 1}
+			<ThemeEditor />
+		{/if}
+		{#if selectedTabIndex === 2}
+			<ExportTab />
+		{/if}
+	</div>
 </div>
+
+<style>
+	.tab-content {
+		height: calc(100% - 2.5rem);
+	}
+</style>

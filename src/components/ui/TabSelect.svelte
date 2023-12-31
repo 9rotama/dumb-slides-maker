@@ -9,12 +9,12 @@
 	}
 </script>
 
-<div class="flex flex-row">
+<div class="flex flex-row box-border rounded overflow-hidden w-max">
 	{#each tabs as tab, i}
 		<button
-			class="flex items-center justify-center p-2 {selectedTabIndex === i
-				? 'bg-slate-100 text-slate-700'
-				: 'bg-slate-900 hover:bg-slate-800'}"
+			class="flex items-center justify-center p-1 w-50 {selectedTabIndex === i
+				? 'bg-nord-6 text-nord-0'
+				: 'bg-nord-1 hover:bg-nord-2'}"
 			on:click={() => selectOption(i)}
 		>
 			{tab.name}

@@ -45,10 +45,8 @@
 
 <svelte:window bind:innerWidth on:resize={updateSlidesSizeInWindow} />
 
-<div
-	class="marpit-wrapper"
-	style="transform-origin: left top; transform: scale({((innerWidth - 50) * 0.5) / 1280})"
->
+<div style="transform-origin: left top; transform: scale({((innerWidth - 90) * 0.5) / 1280})">
 	{@html htmlString}
 </div>
+
 {@html cssString}

@@ -19,12 +19,14 @@
 	};
 </script>
 
-<div>
-	<p>背景色</p>
-	<Select options={backgroundColorOptions} bind:selectedOption={selectedBackgroundColor} />
+<div class="w-full pt-10 pl-40 pr-40 flex flex-col items-center gap-5">
+	<div class="w-full flex flex-row items-center justify-between">
+		<p>背景色</p>
+		<Select options={backgroundColorOptions} bind:selectedOption={selectedBackgroundColor} />
+	</div>
+	<div class="w-full flex flex-row items-center justify-between">
+		<p>フォントタイプ</p>
+		<Select options={fontFamilyOptions} bind:selectedOption={selectedFontFamily} />
+	</div>
+	<div class="w-max"><Button onClick={setTheme}>Apply</Button></div>
 </div>
-<div>
-	<p>フォントタイプ</p>
-	<Select options={fontFamilyOptions} bind:selectedOption={selectedFontFamily} />
-</div>
-<Button onClick={setTheme}>Apply</Button>

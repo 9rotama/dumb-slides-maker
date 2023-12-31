@@ -17,19 +17,19 @@
 
 <div class="relative inline-block">
 	<button
-		class="p-2 bg-gray-900 border border-gray-600 rounded hover:border-gray-500 flex items-center gap-2"
+		class="p-2 border border-nord-3 rounded hover:border-nord-4 flex items-center gap-2"
 		on:click={toggleDropdown}
 	>
 		{selectedOption?.name || 'Select an option'}
 		<div class="i-ri-arrow-down-s-line" />
 	</button>
 	<div
-		class="absolute border border-gray-500 bg-slate-700 w-full flex-col rounded z-2 {isOpen
+		class="absolute border border-nord-3 bg-nord-0 w-full flex-col rounded z-2 {isOpen
 			? 'flex'
 			: 'hidden'}"
 	>
 		{#each options as option, i}
-			<button class="hover:bg-slate-800" on:click={() => selectOption(i)}>{option.name}</button>
+			<button class="hover:bg-nord-3" on:click={() => selectOption(i)}>{option.name}</button>
 		{/each}
 	</div>
 </div>
