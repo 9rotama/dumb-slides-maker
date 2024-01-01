@@ -4,27 +4,31 @@
 	import { markdownTextStore } from '../stores/markdownTextStore';
 	import { slidesThemeOptionsStore } from '../stores/slidesThemeOptionsStore';
 	import { createMarpTheme } from '../utils/createMarpTheme';
+	import { marpit } from '$lib/marpit';
 
-	$: markdownText = '';
 	$: htmlString = '';
 	$: cssString = '';
 
-	const marpit = new Marpit();
+	let innerWidth: number;
+
 
 	onMount(() => {
-		const { html, css } = marpit.render('');
-		htmlString = html;
-		cssString = `<style>${css}</style>`;
+		marpit.themeSet.default = marpit.themeSet.add(createMarpTheme($slidesThemeOptionsStore));
+		renderSlides();
 	});
 
 	const renderSlides = () => {
-		const { html, css } = marpit.render(markdownText);
+		const { html, css } = marpit.render($markdownTextStore);
 		htmlString = html;
 		cssString = `<style>${css}</style>`;
 	};
 
-	const unsubscribeText = markdownTextStore.subscribe((text) => {
-		markdownText = text;
+	const updateSlidesSizeInWindow = () => {
+		marpit.themeSet.default = marpit.themeSet.add(createMarpTheme($slidesThemeOptionsStore));
+		renderSlides();
+	};
+
+	const unsubscribeText = markdownTextStore.subscribe(() => {
 		renderSlides();
 	});
 
@@ -39,5 +43,10 @@
 	});
 </script>
 
-<div class="marpit-wrapper">{@html htmlString}</div>
+<svelte:window bind:innerWidth on:resize={updateSlidesSizeInWindow} />
+
+<div style="transform-origin: left top; transform: scale({((innerWidth - 90) * 0.5) / 1280})">
+	{@html htmlString}
+</div>
+
 {@html cssString}

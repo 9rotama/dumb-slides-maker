@@ -1,23 +1,14 @@
 <script lang="ts">
 	import { markdown } from '@codemirror/lang-markdown';
+	import { nord } from '@uiw/codemirror-theme-nord';
 	import CodeMirror from 'svelte-codemirror-editor';
 	import { markdownTextStore } from '../stores/markdownTextStore';
-
-	let value = '# タイトル';
-
-	const onTextChange = () => {
-		markdownTextStore.set(value);
-	};
 </script>
 
 <CodeMirror
-	bind:value
-	on:change={onTextChange}
+	bind:value={$markdownTextStore}
 	lang={markdown()}
-	styles={{
-		'&': {
-			width: '100%',
-			height: '90vh'
-		}
-	}}
+	extensions={[nord]}
+	class="h-full scrollbar"
+	styles={{ '&': { height: '100%', 'font-size': '1rem' } }}
 />
