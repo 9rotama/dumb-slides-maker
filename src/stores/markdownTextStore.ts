@@ -1,7 +1,6 @@
 import { writable } from 'svelte/store';
 
 export const markdownTextStore = writable<string>(`
----
 paginate: true
 header: ""
 footer: ""
