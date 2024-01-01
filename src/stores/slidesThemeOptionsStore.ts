@@ -1,5 +1,14 @@
 import { writable } from 'svelte/store';
+import { backgroundColorOptions, fontColorOptions, fontFamilyOptions } from '../const/slidesThemeOptions';
 import type { SlidesThemeOptions } from '../types/SlidesThemeOptions';
-import { backgroundColorOptions, fontFamilyOptions } from '../const/slidesThemeOptions';
 
-export const slidesThemeOptionsStore = writable<SlidesThemeOptions>({ backgroundColor: backgroundColorOptions[0], fontFamily: fontFamilyOptions[0] });
+export const slidesThemeOptionsStore = writable<SlidesThemeOptions>({
+	firstBackgroundColor: backgroundColorOptions[0],
+	secondBackgroundColor: backgroundColorOptions[0],
+	fontFamily: fontFamilyOptions[0],
+	fontColor: fontColorOptions[0],
+	headingFontSize: 1,
+	titleFontSize: 1,
+	fontSize: 1,
+
+});

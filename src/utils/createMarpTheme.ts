@@ -8,6 +8,8 @@ const fontFamilyName = (value: string) => {
 			return '"Mochiy Pop One"';
 		case 'yusei-magic':
 			return '"Yusei Magic"';
+		case '3d':
+			return '"Rampart One"';
 	}
 };
 
@@ -19,12 +21,79 @@ export const createMarpTheme = (option: SlidesThemeOptions) => {
 ${marpDefaultTheme}
 
 section {
-  background-color: ${option.backgroundColor.value};
-  color: black;
+  background: linear-gradient(${option.firstBackgroundColor.value}, ${
+		option.secondBackgroundColor.value
+	});
+  color: ${option.fontColor.value};
   margin-bottom: 20px;
-  filter: drop-shadow(0px 10px 10px #00002270);
   box-sizing: border-box;
   font-family: ${fontFamilyName(option.fontFamily.value)}, sans-serif;
+  display: block;
+  padding: 0 50px;
+}
+
+
+h1 {
+  position: relative;
+  background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: ${2.5 * option.headingFontSize}rem;
+  font-weight: 900;
+  padding: 30px 0 30px 0;
+  z-index: 1;
+}
+
+h2 {
+  font-size: ${1.8 * option.headingFontSize}rem;
+}
+h3 {
+  font-size: ${1.6 * option.headingFontSize}rem;
+}
+h4 {
+  font-size: ${1.4 * option.headingFontSize}rem;
+}
+h5 {
+  font-size: ${1.3 * option.headingFontSize}rem;
+}
+h5 {
+  font-size: ${1.2 * option.headingFontSize}rem;
+}
+
+code {
+  background:linear-gradient(to bottom, blue, green, red);
+}
+
+li{
+  font-size: ${1.2 * option.fontSize}rem;
+}
+
+li::before {
+  content: "aaa";
+  color: transparent;
+  background-image: url("smile.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+section.lead{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.lead h1{
+  font-size: ${3.5 * option.titleFontSize}rem;
+  text-align: center;
+}
+
+img {
+  height: 100%;
+}
+
+pre {
+  background-size: cover;
+  background-image: url(wood.png);
 }
 
   `;
