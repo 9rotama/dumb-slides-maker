@@ -4,13 +4,13 @@
 	import { markdownTextStore } from '../stores/markdownTextStore';
 	import { slidesThemeOptionsStore } from '../stores/slidesThemeOptionsStore';
 	import { createMarpTheme } from '../utils/createMarpTheme';
+	import { marpit } from '$lib/marpit';
 
 	$: htmlString = '';
 	$: cssString = '';
 
 	let innerWidth: number;
 
-	const marpit = new Marpit();
 
 	onMount(() => {
 		marpit.themeSet.default = marpit.themeSet.add(createMarpTheme($slidesThemeOptionsStore));

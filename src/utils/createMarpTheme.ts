@@ -17,7 +17,7 @@ export const createMarpTheme = (option: SlidesThemeOptions) => {
 	return `
 
 /* @theme example */
-
+${code}
 ${marpDefaultTheme}
 
 section {
@@ -94,6 +94,26 @@ img {
 pre {
   background-size: cover;
   background-image: url(wood.png);
+}
+
+table th, table td {
+  border: black solid 5px;
+  padding: 3px;
+  background: #0ff;
+  color: #000
+}
+table p {
+  margin: 0;
+
+}
+
+table th {
+  background: #ff0;
+  color: #000
+}
+table td {
+  background: #0ff;
+  color: #000
 }
 
   `;
@@ -1081,5 +1101,96 @@ section::after {
 }
 section[data-color] h1, section[data-color] h2, section[data-color] h3, section[data-color] h4, section[data-color] h5, section[data-color] h6 {
   color: currentcolor;
+}
+`;
+
+const code = `
+
+/*
+  xt256.css
+
+  Contact: initbar [at] protonmail [dot] ch
+         : github.com/initbar
+*/
+
+.hljs {
+  color: #eaeaea;
+  background: #000;
+}
+
+.hljs-subst {
+  color: #eaeaea;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-type {
+  color: #eaeaea;
+}
+
+.hljs-params {
+  color: #da0000;
+}
+
+.hljs-literal,
+.hljs-number,
+.hljs-name {
+  color: #ff0000;
+  font-weight: bolder;
+}
+
+.hljs-comment {
+  color: #969896;
+}
+
+.hljs-selector-id,
+.hljs-quote {
+  color: #00ffff;
+}
+
+.hljs-template-variable,
+.hljs-variable,
+.hljs-title {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+.hljs-selector-class,
+.hljs-keyword,
+.hljs-symbol {
+  color: #fff000;
+}
+
+.hljs-string,
+.hljs-bullet {
+  color: #00ff00;
+}
+
+.hljs-tag,
+.hljs-section {
+  color: #000fff;
+}
+
+.hljs-selector-tag {
+  color: #000fff;
+  font-weight: bold;
+}
+
+.hljs-attribute,
+.hljs-built_in,
+.hljs-regexp,
+.hljs-link {
+  color: #ff00ff;
+}
+
+.hljs-meta {
+  color: #fff;
+  font-weight: bolder;
 }
 `;

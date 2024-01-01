@@ -1,12 +1,10 @@
 <script lang="ts">
-	import { Marpit } from '@marp-team/marpit';
+	import { marpit } from '$lib/marpit';
 	import { onMount } from 'svelte';
 	import { z } from 'zod';
 	import { markdownTextStore } from '../../stores/markdownTextStore';
 	import { slidesThemeOptionsStore } from '../../stores/slidesThemeOptionsStore';
 	import { createMarpTheme } from '../../utils/createMarpTheme';
-
-	const marpit = new Marpit();
 
 	$: htmlString = '';
 	$: cssString = '';
