@@ -32,10 +32,10 @@ section {
   padding: 0 50px;
 }
 
-
 h1 {
   position: relative;
-  background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  width: fit-content;
+  background: ${option.headingFontColor.value};
   -webkit-background-clip: text;
   color: transparent;
   font-size: ${2.5 * option.headingFontSize}rem;
@@ -62,6 +62,7 @@ h5 {
 
 code {
   background:linear-gradient(to bottom, blue, green, red);
+  font-size: ${option.fontSize}rem;
 }
 
 li{
@@ -83,6 +84,9 @@ section.lead{
 }
 
 section.lead h1{
+  position: relative;
+  background: ${option.titleFontColor.value};
+  -webkit-background-clip: text;
   font-size: ${3.5 * option.titleFontSize}rem;
   text-align: center;
 }
@@ -93,19 +97,37 @@ img {
 
 pre {
   background-size: cover;
-  background-image: url(wood.png);
+  background-image: ${option.codeBlockBackground.value};
+  overflow-wrap: anywhere;
+
 }
+pre code {
+  width: 100%;
+  font-size: ${option.codeBlockFontSize}rem;
+}
+
+pre code span {
+  font-size: ${option.codeBlockFontSize}rem;
+}
+
+p {
+  font-size: ${option.fontSize}rem;
+}
+
 
 table th, table td {
   border: black solid 5px;
   padding: 3px;
   background: #0ff;
-  color: #000
+  color: ${option.tableFontColor.value};
 }
-table p {
+table * {
+  color: ${option.tableFontColor.value};
+  font-size: ${option.tableFontSize}rem;
   margin: 0;
-
 }
+
+
 
 table th {
   background: #ff0;
