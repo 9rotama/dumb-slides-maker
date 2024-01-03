@@ -5,7 +5,13 @@ export type SlidesThemeOptions = {
 	secondBackgroundColor: SelectOption;
 	fontFamily: SelectOption;
 	fontColor: SelectOption;
+	titleFontColor: SelectOption;
+	headingFontColor: SelectOption;
+	tableFontColor: SelectOption;
+	fontSize: number;
 	titleFontSize: number;
 	headingFontSize: number;
-	fontSize: number;
+	codeBlockFontSize: number;
+	tableFontSize: number;
+	codeBlockBackground: SelectOption;
 };
